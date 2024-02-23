@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>       
+        let numero;
+        let numeroA;
+        let numeroB;
+        let operacao;
+        let resultado;
+
+        numeroA = Number(prompt("inserir o primeiro numero"));
+        operacao = prompt("insira a operação desejada");
+        numeroB = Number(prompt("inserir o segundo numero"));
+
+
+        //numero = Number(prompt("inserir um número"));
+
+        // if(numero > 5){
+        // alert("maior que 5");
+        // }else if(numero == 5){
+        // alert("igual a 5");
+        // }else{
+        // alert("menor que 5");
+        // }
+        // QUALQUER COISA QUE NÃO SEJA UM N° MAIOR OU IGUAL A 5 TERÁ A RESPOSTA "MENOR QUE 5"
+
+
+
+
+
+        switch(operacao){
+            case "+":
+                resultado = numeroA + numeroB;
+                alert(resultado);
+                break;
+            case "-":
+                resultado = numeroA - numeroB;
+                alert(resultado);
+                break;    
+            case "*":
+                resultado = numeroA * numeroB;
+                alert(resultado);
+                break;
+            default:
+                alert("Operação não localizada");
+        }
+    
+    </script>
+</body>
+</html> 

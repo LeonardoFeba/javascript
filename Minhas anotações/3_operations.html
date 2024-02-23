@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>       
+        var resultado = 0;
+        var a;
+        var b;
+
+        a = prompt("insira o primeiro número");
+        b = prompt("insira o segundo número");
+        
+        a = Number(a);
+        b = Number(b);
+        console.log(typeof(a));
+        
+        //soma
+        resultado = a + b;
+
+        //concatenação
+        console.log("a + b = " + resultado);
+        alert(`${a} + ${b} = ${resultado}`);
+
+        //subtração 
+        resultado = a - b;
+        //interpolação (temos que usar cráse -> `)
+        console.log(`a - b = ${resultado}`);
+
+        // * symbol -> multiplicação
+        resultado = a * b;
+        console.log("a * b = " + resultado);
+
+        //divisão 
+        resultado = a / b;
+        console.log("a / b = " + resultado);
+    </script>
+</body>
+</html> 
