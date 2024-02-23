@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script></script> -->
+    <title>javaScript</title>
+</head>
+<body>
+    <script>
+        
+        function logParams(a,b,c){
+            console.log(a,b,c)
+        }
+
+        logParams(1,2,3,4,5)
+        logParams(1,2,3,4)
+        logParams(1,2,3)
+        logParams(1)
+
+
+        function defaultParams(a = 0,b = 0,c = 0){
+            console.log(a,b,c)
+        }
+
+        logParams(1 )
+
+        
+        function logNums(nums){
+            for(let n of nums)
+            console.log(n)
+        }
+
+        logNums([1,2,3,4,5,6])
+
+        //spread/rest
+        function logNums(...nums){
+            console.log(nums)
+            for(let n of nums)
+            console.log(n)
+        }
+
+        logNums(1,2,3,4,5,6)
+        
+
+
+    </script>
+</body>
+</html>
