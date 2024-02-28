@@ -7,5 +7,6 @@ function printa(dado) {
 
 function apaga() {
   formula = "";
+  //formula = formula.substing(0,formula.length-1);
   document.getElementById("formula").innerText = formula;
 }
