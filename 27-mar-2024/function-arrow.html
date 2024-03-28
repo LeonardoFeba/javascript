@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow</title>
+  </head>
+  <body>
+    <button onclick="olaMundo(2)">Hello World</button>
+    <script>
+      //function declaration
+      function somaZero(a, b, c) {
+        return a + b + c;
+      }
+
+      //function express
+      const soma = function (d, e, f) {
+        return d + e + f;
+      };
+
+      //function arrow abaixo
+      const somaDois = (g, h) => {
+        return g + h;
+      };
+
+      const somaTres = (n) => {
+        return n + 3;
+      };
+
+      const somaQuatro = (n) => n + 4;
+
+      console.log(somaZero(1, 2, 3));
+      console.log(soma(3, 3, 3));
+      console.log(somaDois(7, 3));
+      console.log(somaTres(8));
+      console.log(somaQuatro(9));
+    </script>
+  </body>
+</html>

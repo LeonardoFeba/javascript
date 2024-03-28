@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIFE</title>
+  </head>
+  <body>
+    <button onclick="olaMundo(2)">Hello World</button>
+    <script>
+      //Anonymu function
+      //IIFE - Immediatly Invoke Function Express
+      (function (a, b, c) {
+        alert(a + b + c);
+      })(1, 2, 3);
+
+      //function express
+      const alertar = function (d, e, f) {
+        alert(d + e + f);
+      };
+
+      alertar(3, 3, 3);
+    </script>
+  </body>
+</html>
