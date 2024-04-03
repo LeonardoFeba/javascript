@@ -6,7 +6,7 @@ function desenharTabela() {
   // let dadoAntigo = "";
   for (let aluno = 1; aluno <= qtdAlunos; aluno++) {
     // dadoAntigo = tabela.innerHTML;
-    tabela.innerHTML += `<tr>
+    tabela.innerHTML += `<tr id= linha${aluno}>
       <th>${aluno}</th>
       <td><input type="text" class="form-control" id="nome${aluno}" placeholder="nome"></td>
       <td><input type="number" class="form-control" id="a${aluno}n1" placeholder=""></td>
@@ -18,6 +18,92 @@ function desenharTabela() {
   </tr>`;
   }
 }
+
+function adicionarAluno() {
+  qtdAlunos += 1;
+  const tabela = document.querySelector("#tabela");
+
+  //Criação dos elementos
+  let linha = document.createElement("tr"); //criar tag linha da tabela
+  let headerLinha = document.createElement("th");
+  let dadoNome = document.createElement("td");
+  let inputNome = document.createElement("input");
+  let dadoNota = "";
+  let inputNota = "";
+  let outputMedia = "";
+  let dadoMedia = "";
+  let outputSitu = "";
+  let dadoSitu = "";
+
+  linha.id = `linha${qtdAlunos}`;
+
+  headerLinha.innerText = qtdAlunos;
+  inputNome.classList.add("form-control");
+  inputNome.id = `a${qtdAlunos}`;
+  inputNome.type = "text";
+  inputNome.placeholder = "nome";
+
+  dadoNome.appendChild(inputNome);
+  linha.appendChild(headerLinha);
+  linha.appendChild(dadoNome);
+
+  for (let nota = 1; nota <= qtdNotas; nota++) {
+    dadoNota = document.createElement("td");
+    inputNota = document.createElement("input");
+    inputNota.classList.add("form-control");
+    inputNota.id = `a${qtdAlunos}n${nota}`;
+    inputNota.type = "number";
+
+    dadoNota.appendChild(inputNota);
+    linha.appendChild(dadoNota);
+  }
+
+  outputMedia = document.createElement("output");
+  dadoMedia = document.createElement("td");
+  outputMedia.id = `media${qtdAlunos}`;
+
+  outputSitu = document.createElement("output");
+  dadoSitu = document.createElement("td");
+  outputSitu.id = `situacao${qtdAlunos}`;
+
+  linha.appendChild(dadoNota);
+  dadoNota.appendChild(inputNota);
+
+  linha.appendChild(dadoMedia);
+  dadoMedia.appendChild(outputMedia);
+
+  linha.appendChild(dadoSitu);
+  dadoSitu.appendChild(outputSitu);
+  tabela.appendChild(linha); // adiciona uma linha <tr> ao final da tabela
+}
+
+function deletarAluno() {
+  if (qtdAlunos > 1) {
+    let alunoDeletar = document.querySelector(`#linha${qtdAlunos}`);
+    document.querySelector("#tabela").removeChild(alunoDeletar);
+    qtdAlunos--;
+    //qtdAlunos = qtdAlunos - 1;
+  }
+}
+
+function criarNota() {
+  qtdNotas++;
+  //qtdNotas = qtdNotas + 1;
+  let colunaReferencia = document.querySelector("#media0");
+  let novaColuna = document.createElement("th");
+
+  novaColuna.innerText = `Nota ${qtdNotas}`;
+  document.querySelector("#linha0").insertBefore(novaColuna, colunaReferencia);
+
+  for (let aluno = 1; aluno <= qtdAlunos; aluno++) {
+    colunaReferencia = document.querySelector(`media${aluno}`);
+    document
+      .querySelector(`linha${aluno}`)
+      .insertBefore(novaColuna, colunaReferencia);
+  }
+}
+
+function deletarColuna() {}
 
 function calcular() {
   let notaParcial;
@@ -57,63 +143,6 @@ function calcular() {
     }
   }
 }
-
-function adicionarAluno() {
-  qtdAlunos += 1;
-  const tabela = document.querySelector("#tabela");
-
-  //Criação dos elementos
-  let linha = document.createElement("tr"); //criar tag linha da tabela
-  let headerLinha = document.createElement("th");
-  let dadoNome = document.createElement("td");
-  let inputNome = document.createElement("input");
-  let dadoNota = "";
-  let inputNota = "";
-  let outputMedia = "";
-  let dadoMedia = "";
-  let outputSitu = "";
-  let dadoSitu = "";
-
-  headerLinha.innerText = qtdAlunos;
-  inputNome.classList.add("form-control");
-  inputNome.id = `a${qtdAlunos}`;
-  inputNome.type = "text";
-  inputNome.placeholder = "nome";
-
-  linha.appendChild(headerLinha);
-  dadoNome.appendChild(inputNome);
-  linha.appendChild(dadoNome);
-
-  for (let nota = 1; nota <= qtdNotas; nota++) {
-    dadoNota = document.createElement("td");
-    inputNota = document.createElement("input");
-    inputNota.classList.add("form-control");
-    inputNota.id = `a${qtdAlunos}n${nota}`;
-    inputNota.type = "number";
-
-    dadoNota.appendChild(inputNota);
-    linha.appendChild(dadoNota);
-  }
-
-  outputMedia = document.createElement("output");
-  dadoMedia = document.createElement("td");
-  outputMedia.id = `media${qtdAlunos}`;
-
-  outputSitu = document.createElement("output");
-  dadoSitu = document.createElement("td");
-  outputSitu.id = `situacao${qtdAlunos}`;
-
-  linha.appendChild(dadoNota);
-  dadoNota.appendChild(inputNota);
-
-  linha.appendChild(dadoMedia);
-  dadoMedia.appendChild(outputMedia);
-
-  linha.appendChild(dadoSitu);
-  dadoSitu.appendChild(outputSitu);
-  tabela.appendChild(linha); // adiciona uma linha <tr> ao final da tabela
-}
-
 // function adicionarNota() {
 //   qtdAlunos += 1;
 //   const tabela = document.querySelector("#tabela");

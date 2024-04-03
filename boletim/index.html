@@ -15,14 +15,14 @@
   <body onload="desenharTabela()">
     <table class="table">
       <thead>
-        <tr>
+        <tr id="linha0">
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Nota 1</th>
           <th scope="col">Nota 2</th>
           <th scope="col">Nota 3</th>
           <th scope="col">Nota 4</th>
-          <th scope="col">Média</th>
+          <th scope="col" id="media0">Média</th>
           <th scope="col">Situação</th>
         </tr>
       </thead>
@@ -40,8 +40,16 @@
       Adicionar aluno
     </button>
     <button
+      id="exAluno"
+      onclick="deletarAluno()"
+      type="button"
+      class="btn btn-secondary btn-lg"
+    >
+      Excluir aluno
+    </button>
+    <button
       id="nvNota"
-      onclick="adicionarNota()"
+      onclick="criarNota()"
       type="button"
       class="btn btn-secondary btn-lg"
     >
