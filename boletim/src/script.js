@@ -96,14 +96,35 @@ function criarNota() {
   document.querySelector("#linha0").insertBefore(novaColuna, colunaReferencia);
 
   for (let aluno = 1; aluno <= qtdAlunos; aluno++) {
-    colunaReferencia = document.querySelector(`media${aluno}`);
+    let dadoNota = document.createElement("td");
+    let inputNota = document.createElement("input");
+
+    inputNota.classList.add("form-control");
+    inputNota.id = `a${aluno}n${qtdNotas}`;
+    inputNota.type = "number";
+
+    dadoNota.appendChild(inputNota);
+
+    novaColuna = dadoNota;
+    colunaReferencia = document.querySelector(`#media${aluno}`).parentElement;
     document
-      .querySelector(`linha${aluno}`)
+      .querySelector(`#linha${aluno}`)
       .insertBefore(novaColuna, colunaReferencia);
   }
 }
 
-function deletarColuna() {}
+function deletarNota() {
+  let notaDeletar = document.querySelector("#media0").previousElementSibling;
+  document.querySelector("#linha0").removeChild(notaDeletar);
+
+  for (let aluno = 1; aluno <= qtdAlunos; aluno++) {
+    notaDeletar = document.querySelector(
+      `#a${aluno}n${qtdNotas}`
+    ).parentElement;
+    document.querySelector(`#linha${aluno}`).removeChild(notaDeletar);
+  }
+  qtdNotas = qtdNotas - 1;
+}
 
 function calcular() {
   let notaParcial;
