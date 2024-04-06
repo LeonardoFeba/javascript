@@ -1,1 +1,3 @@
-function bemvindo alert('Hello World');
+function bemvindo() {
+  alert("Hello World");
+}
