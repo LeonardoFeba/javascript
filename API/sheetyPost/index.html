@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Post API Sheety</title>
   </head>
   <body>
-    <script src="script.js"></script>
+    <table>
+      <thead>
+        <tr>
+          <th>aluno</th>
+          <th>matricula</th>
+          <th>turno</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label><input type="text" id="nome" /></label>
+          </td>
+          <td>
+            <label><input type="number" id="matricula" /></label>
+          </td>
+          <td>
+            <label><input type="text" id="turma" /></label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="addAluno()">Adicionar aluno</button>
+    <script src="post.js"></script>
   </body>
 </html>

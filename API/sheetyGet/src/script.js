@@ -3,10 +3,11 @@ fetch(url)
   .then((response) => response.json())
   .then((json) => {
     // Do something with the data
+    console.log(json);
     console.log(json.aluno);
     document.querySelector("#nome").value = json.aluno[0].nome;
     document.querySelector("#matricula").value = json.aluno[0].matricula;
-    document.querySelector("#turma").value = json.aluno[0].turma;
+    document.querySelector("#turno").value = json.aluno[0].turno;
   });
 
 // .catch(() =>
