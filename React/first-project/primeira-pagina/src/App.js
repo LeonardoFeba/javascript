@@ -13,7 +13,7 @@ function App() {
         <label>
           Senha: <input type="password"></input>
         </label>
-        <Botao></Botao>
+        <Botao descricao="Componente Botao" nome="Corinthians"></Botao>
         <button>Entrar</button>
         <button>Esqueci minha senha</button>
       </form>
