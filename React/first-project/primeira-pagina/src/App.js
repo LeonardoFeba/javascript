@@ -14,6 +14,7 @@ function App() {
           Senha: <input type="password"></input>
         </label>
         <Botao descricao="Componente Botao" nome="Corinthians"></Botao>
+        <Botao descricao="Componente Botao"></Botao>
         <button>Entrar</button>
         <button>Esqueci minha senha</button>
       </form>

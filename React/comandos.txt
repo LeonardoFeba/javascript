@@ -1,3 +1,5 @@
-npx create-react-app <nome do projeto> || ("./") > cria no diretório atual
+>npx create-react-app <nome do projeto> || ("./") -> cria no diretório atual
+
+>npm install -> inicializar projeto existente(baixado do github por ex.)
 
 
