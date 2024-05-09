@@ -1,0 +1,17 @@
+.App {
+  background-color: khaki;
+  padding: 1px 0px 10px 10px;
+}
+
+p {
+  color: rgb(32, 2, 227);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  display: inline;
+  width: 25%;
+}
